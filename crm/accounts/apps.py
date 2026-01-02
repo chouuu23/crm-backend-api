@@ -3,7 +3,7 @@ from django.apps import AppConfig
 
 class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'crm.accounts'
+    name = 'accounts'
 
     def ready(self):
-        import crm.accounts.signals
+        import accounts.signals
