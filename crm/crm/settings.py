@@ -32,8 +32,8 @@ INSTALLED_APPS = [
     "corsheaders",
 
     # Local apps
-    'crm.accounts',
-    "cart_items",
+    'crm.accounts.apps.AccountsConfig',
+    'crm.cart_items.apps.CartItemsConfig',
 ]
 
 # ======================================================
