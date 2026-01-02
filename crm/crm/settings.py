@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     "corsheaders",
 
     # Local apps
-    "accounts",
+    'crm.accounts',
     "cart_items",
 ]
 
