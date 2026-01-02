@@ -20,21 +20,21 @@ ALLOWED_HOSTS = ["*"]
 # ======================================================
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 
-    # Third-party
-    "rest_framework",
-    "corsheaders",
+    'rest_framework',
+    'corsheaders',
 
-    # Local apps
-    'crm.accounts.apps.AccountsConfig',
-    'crm.cart_items.apps.CartItemsConfig',
+    'accounts',
+    'cart_items',
 ]
+
+
 
 # ======================================================
 # MIDDLEWARE
