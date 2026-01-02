@@ -41,8 +41,9 @@ INSTALLED_APPS = [
 # ======================================================
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',      # MUST be first
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -51,9 +52,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-
-MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 
 # ======================================================
 # CORS + SESSION (FLUTTER WEB FIX)
@@ -97,12 +95,12 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 # DATABASE
 # ======================================================
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
+}
+
 
 # ======================================================
 # PASSWORD VALIDATION
@@ -129,6 +127,7 @@ USE_TZ = True
 # ======================================================
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
